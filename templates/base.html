@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="gl1jVKQIIZEuZ18Sx5mp3xX2ei7LG1-bIPn_UIc8p5g" />
+    <meta name='yandex-verification' content='7ac187d4aea611fe' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Свадебные платья Махачкала, свадьба,прокат лимузинов, свадебные прически">
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/site.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Adamina|Open+Sans:400,400italic,600,600italic,700,700italic,800,800italic,300,300italic|Clicker+Script&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    {% load leaflet_tags %}
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+      <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  {% leaflet_js %}
+    {% leaflet_css %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+<div id="nav-wrapper" style="margin-bottom: 40px;">
+        <div class="navbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="navbar-header">
+
+                            <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                                <i class="fa fa-bars"></i>
+                            </button>
+
+                            <!-- logo -->
+                            <a href="/" class="navbar-brand scrollto" title="Safandi">
+                                <img src="/static/img/logo.png" alt="logo">
+                            </a><!-- /logo -->
+
+                        </div>
+                        <!-- /navbar-header -->
+
+                        <!-- navbar-collapse -->
+                        <div class="navbar-collapse collapse">
+
+                            <!-- nav -->
+                            <ul class="nav navbar-nav navbar-right">
+
+                                <!-- Home -->
+                                <li class="active">
+                                    <a href="/" title="Главная страница">
+                                        Главная
+                                    </a>
+                                </li>
+
+
+
+                                <li class="">
+                                    <a href="/catalog" title="Каталог">
+                                         Каталог
+                                    </a>
+                                </li>
+
+
+                                <li class="">
+                                    <a href="#" title="Portfolio" class="scrollto">
+                                         Свадебные истории
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#" title="Portfolio" class="scrollto">
+                                         Советы
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="#" title="Portfolio" class="scrollto">
+                                         Контакты
+                                    </a>
+                                </li>
+
+
+                        </ul></div>
+                        <!-- /navbar-collapse -->
+
+                    </div>
+                    <!-- /col-md-12 -->
+
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /navbar -->
+    </div>
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="col">
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="col">
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="col col-social-icons">
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-9 copyright">
+            </div>
+            <div class="col-lg-3 footer-logo">
+<!-- Yandex.Metrika informer -->
+<a href="https://metrika.yandex.ru/stat/?id=25345994&amp;from=informer"
+target="_blank" rel="nofollow"><img src="//bs.yandex.ru/informer/25345994/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:25345994,lang:'ru'});return false}catch(e){}"/></a>
+<!-- /Yandex.Metrika informer -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter25345994 = new Ya.Metrika({id:25345994,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/25345994" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->            </div>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Свадебный каталог{% endblock %}
+{% block content %}
+    <h1>Последние твитты</h1>
+
+
+
+    {% for tweet in tweets %}
+        <div class="media">
+            <div class="pull-left">
+                <a href="https://twitter.com/{{ tweet.user.screen_name }}" target="_blank">
+                    <img src="{{ tweet.user.profile_image_url }}"/>
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading"><a
+                        href="https://twitter.com/{{ tweet.user.screen_name }}" target="_blank">{{ tweet.user.name }}</a></h4>
+                {{ tweet.text }}
+                {% if tweet.place %}
+                    <h3>{{ tweet.place.full_name }}</h3>
+                {% endif %}
+
+                    <h6>{{ tweet.created_at }}</h6>
+
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

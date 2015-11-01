@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Свадебный каталог{% endblock %}
+{% block content %}
+
+<h1>Все категории</h1>
+<div class="row">
+   <div class="col-md-3">
+       {% load mptt_tags %}
+         <ul class="nav nav-pills nav-stacked">
+          {% recursetree object_list %}
+             <li> <a href="/catalog/{{ node.alt_name }}">{{ node.name }}</a></li>
+          {% endrecursetree %}
+         </ul>
+
+   </div>
+
+   <div class="col-md-9">
+     <div class="row">
+      {% for firm in firms_list %}
+          <div class="col-xs-6 col-md-4">
+             <div class="thumbnail">
+                <a href="/catalog/firm/{{ firm.alt_title }}.html">
+                    <img src="{{ firm.smart.url }}" />
+                </a>
+                <div class="caption">
+                    <h3><a href="/catalog/firm/{{ firm.alt_title }}.html"> {{ firm.title }}</a></h3>
+                </div>
+             </div>
+          </div>
+      {% endfor %}
+     </div>
+   </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} Свадебный портал Ksvadbe05.ru {% endblock %}
+{% block description %} Свадебный портал Ksvadbe05.ru содержит всю необходимую информацию, которая вам поможет подготовиться к свадьбе и сделать ее незабываемой.{% endblock %}
+
+{% block content %}
+<div class="row">
+<div class="col-md-4 col-md-offset-4">
+<h1>Вход</h1>
+<div class="social_box">
+<div class="title" style="display: inline-block;">Войти с помощью </div>
+<div class="social" style="font-size: 20px;display: inline-block;">
+    <a href="{% url 'socialauth_begin' 'facebook' %}" class="facebook_button" title="Авторизоваться через Facebook"><i class="fa fa-facebook"></i></a>
+    <a href="{% url 'socialauth_begin' 'vk-oauth' %}" class="vk_button" title="Авторизоваться через Twitter"><i class="fa fa-vk"></i></a>
+</div>
+</div>
+</div>
+{% endblock %}

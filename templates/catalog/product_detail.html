@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}{{ object.title }}{% endblock %}
+{% block description %}{{ object.seo_description }}{% endblock %}
+{% block content %}
+    {% load thumbnail %}
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="nav">
+                {% for node in category_list %}
+                    <li><a href="/catalog/{{ node.slug }}">{{ node.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-9">
+
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">Главная</a> <span class="divider">></span>
+                </li>
+                <li>
+                    <a href="#">Каталог</a> <span class="divider">></span>
+                </li>
+                <li>
+                    <a href="/catalog/firm/{{ object.firm.alt_title }}.html">{{ object.firm }} </a> <span class="divider">></span>
+                </li>
+                <li class="active">{{ object.title }}</li>
+            </ul>
+            <div class="row">
+                <div class="col-md-6">
+                    {% thumbnail object.image "400x400" crop="center" as im %}
+                        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                    {% endthumbnail %}
+                </div>
+                <div class="col-md-6">
+                    <h1 style="margin-top: 0px;">{{ object.title }}</h1>
+                    {{ object.info }}
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+{% endblock %}

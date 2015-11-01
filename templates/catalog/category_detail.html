@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}{{ object.seo_title }}{% endblock %}
+{% block description %} {{ object.seo_description }} {% endblock %}
+{% block content %}
+<h1>{{ object.name }}</h1>
+ <div class="row">
+   <div class="col-md-3">
+     <ul class="nav">
+      {% for node in category_list %}
+         <li> <a href="/catalog/{{ node.alt_name }}">{{ node.name }}</a></li>
+      {% endfor %}
+     </ul>
+   </div>
+   <div class="col-md-9">
+     <div class="row">
+      {% for firm in object.category.all %}
+          <div class="col-xs-6 col-md-4 firm-item" style="height: 382px;">
+             <div class="thumbnail">
+                <a href="{% url 'firm-detail' firm.alt_title %}">
+                    <img src="{{ firm.smart.url }}"  />
+                </a>
+                <div class="caption">
+                    <h3><a href="{% url 'firm-detail' firm.alt_title %}"> {{ firm.title }}</a></h3>
+                </div>
+             </div>
+          </div>
+      {% endfor %}
+     </div>
+   </div>
+ </div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %} Свадебный портал Ksvadbe05.ru {% endblock %}
+{% block description %} Свадебный портал Ksvadbe05.ru содержит всю необходимую информацию, которая вам поможет
+    подготовиться к свадьбе и сделать ее незабываемой.{% endblock %}
+
+{% block content %}
+    {% load imagekit %}
+    {% load thumbnail %}
+    {% load humanize %}
+
+{#    <div class="row">#}
+{#        <h2>Последние поступления</h2>#}
+{#        {% for prod in last_product %}#}
+{#            <div class="col-md-4">#}
+{#                <div class="thumbnail">#}
+{#                    {% thumbnail prod.image "400x400" crop="center" as im %}#}
+{#                        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">#}
+{#                    {% endthumbnail %}#}
+{#                    <div class="caution">#}
+{#                        <a href="/product/{{ prod.id }}"><h3>{{ prod.title }}</h3></a>#}
+{#                        <span class="label label-primary btn-large">{{ prod.price|floatformat:2|intcomma }} руб </span>#}
+{#                        <a href="/cart/add/{{ prod.id }}/1/" class="btn btn-success btn-block">Купить</a>#}
+{##}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#            </div>#}
+{#        {% endfor %}#}
+{#    </div>#}
+    <div class="clearfix"></div>
+    <div class="row">
+        <h2>Свадебный каталог</h2>
+        {% for firm in firms %}
+            <div class="col-xs-12 col-md-3">
+                <div class="thumbnail-custom">
+                    <a href="/catalog/firm/{{ firm.alt_title }}.html">
+                        <img src="{{ firm.smart.url }}"/>
+                    </a>
+
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
